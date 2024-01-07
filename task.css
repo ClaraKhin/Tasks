@@ -243,4 +243,10 @@ body::before {
   .tasks table tbody td.action-row {
     width: 8%;
   }
+  .add .popup-form form .date-input {
+    width: 100%;
+  }
+  .add .popup-form form .time-input {
+    width: 100%;
+  }
 }
