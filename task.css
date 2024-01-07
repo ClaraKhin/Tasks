@@ -161,6 +161,15 @@ body::before {
 .tasks table {
   text-align: center;
 }
+.add .popup-form form .task-request {
+  color: red;
+}
+.add .popup-form form .date-request {
+  color: red;
+}
+.add .popup-form form .time-request {
+  color: red;
+}
 
 .tasks table tbody td div.form-switch {
   display: flex;
