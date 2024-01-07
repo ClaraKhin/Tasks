@@ -87,6 +87,7 @@ body::before {
   text-align: center;
   box-sizing: border-box;
   box-shadow: -6px 10px 3px -4px rgba(250, 249, 249, 0.322);
+  color: #fff;
 }
 .add .popup-form form .task-input::placeholder {
   color: #fff;
