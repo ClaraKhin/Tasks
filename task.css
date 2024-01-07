@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+body {
+  background: url(images/bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+body::before {
+  content: "";
+  background: inherit;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  filter: blur(4px);
+  z-index: -1;
+}
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(images/bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(4px);
+  z-index: 998;
+}
+.add {
+  text-align: center;
+  display: block;
+}
+.add button#addTasks {
+  padding: 25px;
+  width: 25vw;
+  margin: 30px auto;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 30px;
+  background: #000000a4;
+  border: none;
+  border-radius: 20px;
+  color: #ffffffd4;
+}
+.add button#addTasks:hover {
+  background: #000000c1;
+  color: #fff;
+}
+.add .popup-form {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 20px;
+  z-index: 999;
+}
+.add .popup-form form {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 10px;
+  width: 30%;
+  margin: 0 auto;
+  background-color: #00000092;
+  padding: 20px;
+}
+.add .popup-form form .task-input {
+  margin: 5px 0px;
+  border: none;
+  border-bottom: 1px solid #ffffffaa;
+  border-left: 1px solid #ffffffaa;
+  background-color: transparent;
+  padding: 8px;
+  text-align: center;
+  box-sizing: border-box;
+  box-shadow: -6px 10px 3px -4px rgba(250, 249, 249, 0.322);
+}
+.add .popup-form form .task-input::placeholder {
+  color: #fff;
+}
+.add .popup-form form .task-input:focus {
+  outline: none;
+  color: #fff;
+}
+.add .popup-form form .date-input {
+  margin: 5px 0px;
+  border: none;
+  border-bottom: 1px solid #ffffffaa;
+  border-left: 1px solid #ffffffaa;
+  background-color: transparent;
+  padding: 8px;
+  color: #fff;
+  outline: none;
+  text-align: center;
+  box-sizing: border-box;
+  box-shadow: -6px 10px 3px -4px rgba(250, 249, 249, 0.322);
+}
+
+.add .popup-form form .time-input {
+  margin: 5px 0px;
+  border: none;
+  border-bottom: 1px solid #ffffffaa;
+  border-left: 1px solid #ffffffaa;
+  background-color: transparent;
+  padding: 8px;
+  color: #fff;
+  outline: none;
+  text-align: center;
+  box-sizing: border-box;
+  box-shadow: -6px 10px 3px -4px rgba(250, 249, 249, 0.322);
+}
+
+.add .popup-form form .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.add .popup-form form .buttons #submit {
+  padding: 5px;
+  width: 45%;
+  background-color: #ffffff90;
+  border: none;
+  color: #ffffff;
+  font-size: 20px;
+  border-radius: 20px;
+}
+.add .popup-form form .buttons #submit:hover {
+  background-color: #ffffff5f;
+  color: #ffffffcd;
+}
+.add .popup-form form .buttons #cancel {
+  padding: 5px;
+  width: 45%;
+  background-color: #ffffff90;
+  border: none;
+  color: #ffffff;
+  font-size: 20px;
+  border-radius: 20px;
+}
+.add .popup-form form .buttons #cancel:hover {
+  background-color: #ffffff5f;
+  color: #ffffffcd;
+}
+.tasks {
+  padding: 30px;
+}
+.tasks table {
+  text-align: center;
+}
+
+.tasks table tbody td div.form-switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tasks table tbody td div.form-switch input.form-check-input {
+  cursor: pointer;
+  margin-right: 2px;
+}
+.tasks table tbody td div.form-switch button {
+  background: transparent;
+  border: none;
+  margin-left: 10px;
+}
+
+.tasks table tbody td.task-row {
+  width: 40%;
+}
+
+.tasks table tbody tr.muted-row {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.tasks table tbody td.delete-row button {
+  border: none;
+  background: transparent;
+}
+@media only screen and (max-width: 600px) {
+  .add button#addTasks {
+    padding: 20px;
+    width: 80%;
+    font-size: 20px;
+  }
+  .add .popup-form {
+    display: none;
+    position: relative;
+    bottom: 0%;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    width: 100%;
+    padding: 20px;
+    z-index: 999;
+  }
+  .add .popup-form form {
+    gap: 10px;
+    width: 100%;
+  }
+  .tasks {
+    padding: 10px;
+  }
+  .tasks table thead tr th {
+    font-size: 15px;
+  }
+  .tasks table tbody td div.form-switch input.form-check-input {
+    margin-right: 1px;
+  }
+
+  .tasks table tbody td div.form-switch button {
+    margin-left: 1px;
+  }
+  .tasks table tbody tr th.id-row {
+    width: 3%;
+    font-size: 13px;
+  }
+  .tasks table tbody td.task-row {
+    width: 50%;
+    font-size: 13px;
+  }
+  .tasks table tbody td.date-row {
+    width: 29%;
+    font-size: 13px;
+  }
+  .tasks table tbody td.time-row {
+    width: 8%;
+    font-size: 13px;
+  }
+  .tasks table tbody td.action-row {
+    width: 8%;
+  }
+}
