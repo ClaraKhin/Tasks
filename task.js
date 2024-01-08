@@ -57,10 +57,12 @@ const renderTask = () => {
     const row = document.createElement("tr");
     taskItem.taskId = index + 1;
 
+    const formattedTime = formatTime(taskItem.time);
+
     row.innerHTML = `<th scope="row" class="id-row">${taskItem.taskId}</th>
             <td class="task-row">${taskItem.task}</td>
             <td class="date-row">${taskItem.date}</td>
-            <td class="time-row">${taskItem.time}</td>
+            <td class="time-row">${formattedTime}</td>
             <td class="switch-row">
             <div class="form-check form-switch">
             <input
@@ -100,7 +102,12 @@ const renderTask = () => {
     });
   });
 };
-
+const formatTime = (time) => {
+  const [hours, minutes] = time.split(":");
+  const formattedHours = parseInt(hours, 10) % 12 || 12;
+  const period = parseInt(hours, 10) >= 12 ? "PM" : "AM";
+  return `${formattedHours}:${minutes} ${period}`;
+};
 const setData = () => {
   localStorage.setItem(`myTasks`, JSON.stringify(myTasks));
 };
