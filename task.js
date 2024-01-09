@@ -71,7 +71,7 @@ const renderTask = () => {
               role="switch"
               id="action_${taskItem.taskId}"
               name="action"
-              
+              ${taskItem.action ? "checked" : ""}
             />
             <button class="delete-btn"><i class="fa-solid fa-trash-can fa-lg" style="color: #0c0f12;"></i></button>
           </div>
@@ -90,17 +90,22 @@ const renderTask = () => {
         setData();
       }
     });
-    table.appendChild(row);
 
     const action = row.querySelector(`#action_${taskItem.taskId}`);
 
     action.addEventListener("change", () => {
+      taskItem.action = action.checked;
+      setData();
       action.checked
         ? row.classList.add("muted-row")
         : row.classList.remove("muted-row");
-      setData();
     });
+    table.appendChild(row);
+    if (taskItem.action) {
+      row.classList.add("muted-row");
+    }
   });
+  setData();
 };
 const formatTime = (time) => {
   const [hours, minutes] = time.split(":");
